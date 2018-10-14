@@ -2,7 +2,14 @@ package project;
 
 /**
  *
- * @author Henley Garcia
+ *  Team leader: Henley Garcia Panther ID: 4156157 COP2210
+ *  David Huerta Panther ID: 
+ *  Project Description: Write a program that simulates a statistics tool, 
+ * by letting the user determine the minimum, the maximum, the range (maximum – minimum), 
+ * the mode (value that is repeated more often), the mean
+* (average), and the standard deviation of a set of numbers. T
+* hese numbers, that will be stored in an array, represent salaries in the $30K – $60K range 
+* and are to be generated randomly.
  */
 import java.util.Scanner;
 public class Project 
