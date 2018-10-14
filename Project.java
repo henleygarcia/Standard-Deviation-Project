@@ -46,7 +46,7 @@ public class Project
         
     }
     
-    
+    // Standard Deviation Method
     public static double standardDeviation(double[] salaryArray)
     {
         double average = 0.0;
