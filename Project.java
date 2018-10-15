@@ -1,9 +1,9 @@
-package project;
+package Project;
 
 /**
  *
  *  Team leader: Henley Garcia Panther ID: 4156157 COP2210
- *  David Huerta Panther ID: 
+ *  David Huerta Panther ID: 5057953 COP2210
  *  Project Description: Write a program that simulates a statistics tool, 
  * by letting the user determine the minimum, the maximum, the range (maximum – minimum), 
  * the mode (value that is repeated more often), the mean
@@ -30,7 +30,7 @@ public class Project
 //        }
 //       
         
-        // Calculating Average
+        // Calculating Average (The Mean)
         double total = 0;
         for (double element: salaryArray) 
         {
@@ -46,7 +46,7 @@ public class Project
         
     }
     
-    
+    // Standard Deviation Method
     public static double standardDeviation(double[] salaryArray)
     {
         double average = 0.0;
@@ -69,5 +69,37 @@ public class Project
         
         return stanDev;
     }
+    
+    //Max method
+    public static double getMaxValue(double [] numbers)
+    {
+        double maxValue = numbers[0];
+        for(int i=0;i < numbers.length;i++)
+        {
+            if(numbers[i] > maxValue)
+            {
+                maxValue = numbers[i];
+            }
+        }
+        System.out.println("the max value is: " + maxValue);
+        return maxValue;
+    }
+    
+    // Min method
+    public static double getMinValue(double [] numbers)
+    {
+        double minValue = numbers[0];
+        for(int i=0;i<numbers.length;i++)
+        {
+            if(numbers[i] < minValue)
+            {
+                minValue = numbers[i];
+            }
+        }
+        System.out.println("the min value is: " + minValue);
+        return minValue;
+    }
+        
+        
     
 }
