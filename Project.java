@@ -11,6 +11,7 @@ package Project;
 * hese numbers, that will be stored in an array, represent salaries in the $30K – $60K range 
 * and are to be generated randomly.
  */
+import java.util.Arrays;
 import java.util.Scanner;
 public class Project 
 {
@@ -88,7 +89,7 @@ public class Project
     // Min method
     public static double getMinValue(double [] numbers)
     {
-        double minValue = numbers[0];
+        double minValue = 61;
         for(int i=0;i<numbers.length;i++)
         {
             if(numbers[i] < minValue)
@@ -97,6 +98,8 @@ public class Project
             }
         }
         System.out.println("the min value is: " + minValue);
+        String Output = "the min value is " + minValue;
+        
         return minValue;
     }
         
