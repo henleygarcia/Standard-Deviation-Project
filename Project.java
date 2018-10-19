@@ -112,25 +112,33 @@ public class Project
        
         
     }
-    
     // Standard Deviation Method
     public static double standardDeviation(double[] salaryArray)
     {
         double average = 0.0;
         double stanDev = 0.0;
         double total = 0;
+        double total2 = 0;
+        double result = 0;
         for (double element: salaryArray) 
         {
            total += element;
-           average = (total / salaryArray.length);
         }
+        average = (total / salaryArray.length);
         System.out.println("The average is: " + average);
-        for (double element: salaryArray)
+        System.out.println(salaryArray.length);
+        System.out.println(total);
+        for(double element: salaryArray)
         {
-            double result = Math.pow(2, element - average);
-            stanDev = Math.sqrt(result/(salaryArray.length-1));
+            result += Math.pow((element - average), 2);
             
         } // end for
+        System.out.println(salaryArray.length);
+        stanDev = (result/salaryArray.length);
+        stanDev = Math.sqrt(stanDev);
+             
+  
+        return stanDev;
             
         
         
