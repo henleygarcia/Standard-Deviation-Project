@@ -31,6 +31,72 @@ public class Project
 //        }
 //       
         
+        int UserInput = 0;       
+        do 
+        {
+            System.out.println("1) Populate Array");
+            System.out.println("2) Display Array");
+            System.out.println("3) Minimum");
+            System.out.println("4) Maximum");
+            System.out.println("5) Range");
+            System.out.println("6) Mode");
+            System.out.println("7) Mean");
+            System.out.println("8) Standard Deviation");
+            System.out.println("9) Exit");
+            System.out.print("PLease enter a number: ");
+            UserInput = in.nextInt();
+            
+            switch(UserInput)
+            {
+                case 1:
+                {
+                    //System.out.println("Populate Array");
+                    break;
+                }
+                case 2:
+                {
+                    //System.out.println("Display Array");
+                    break;                   
+                }
+                case 3: 
+                {
+                    //System.out.println("Minimum");
+                    break;
+                }
+                case 4: 
+                {
+                    //System.out.println("Maximum");
+                    break;
+                }
+                case 5: 
+                {
+                    //System.out.println("Range");
+                    break;
+                }
+                case 6: 
+                {
+                    //System.out.println("Mode");
+                    break;
+                }
+                case 7 :
+                {
+                    //System.out.println("Mean");
+                    break;
+                }
+                case 8:
+                {
+                    //System.out.println("Standard Deviation");
+                    break;
+                }
+                default:
+                {
+                    //System.out.println("");
+                    break;
+                }                   
+            }           
+        } while (UserInput != 9);
+        //System.out.println("Goodbye!");
+        
         // Calculating Average (The Mean)
         double total = 0;
         for (double element: salaryArray) 
