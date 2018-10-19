@@ -165,7 +165,7 @@ public class Project
     // Min method
     public static double getMinValue(double [] numbers)
     {
-        double minValue = 61;
+        double minValue = 60001.00;
         for(int i=0;i<numbers.length;i++)
         {
             if(numbers[i] < minValue)
