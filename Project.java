@@ -1,4 +1,4 @@
-package Project;
+package project;
 
 /**
  *
@@ -23,14 +23,6 @@ public class Project
        
        Scanner in = new Scanner(System.in);
 //       double salary = in.nextDouble();
-       double [] salaryArray = {22.0, 69.0, 10.0};
-       
-//        for (int i = 0; i < salaryArray.length; i++) 
-//        {
-//            
-//        }
-//       
-        
         int UserInput = 0;       
         do 
         {
@@ -90,12 +82,20 @@ public class Project
                 }
                 default:
                 {
-                    //System.out.println("");
+                    //System.out.println(" ");
                     break;
                 }                   
             }           
         } while (UserInput != 9);
         //System.out.println("Goodbye!");
+        
+       double [] salaryArray = {22.0, 69.0, 10.0};
+       
+//        for (int i = 0; i < salaryArray.length; i++) 
+//        {
+//            
+//        }
+//       
         
         // Calculating Average (The Mean)
         double total = 0;
@@ -112,8 +112,7 @@ public class Project
        
         
     }
-    
-    // Standard DeviationMethod
+    // Standard Deviation Method
     public static double standardDeviation(double[] salaryArray)
     {
         double average = 0.0;
@@ -140,7 +139,6 @@ public class Project
              
   
         return stanDev;
-    }
             
         
         
@@ -165,7 +163,7 @@ public class Project
     // Min method
     public static double getMinValue(double [] numbers)
     {
-        double minValue = 60001.00;
+        double minValue = 61;
         for(int i=0;i<numbers.length;i++)
         {
             if(numbers[i] < minValue)
