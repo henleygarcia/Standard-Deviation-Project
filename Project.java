@@ -1,4 +1,4 @@
-package Project;
+package project;
 
 /**
  *
@@ -138,7 +138,7 @@ public class Project
         System.out.println(salaryArray.length);
         stanDev = (result/salaryArray.length);
         stanDev = Math.sqrt(stanDev);
-  
+
         return stanDev;
     }
     
