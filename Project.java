@@ -13,12 +13,14 @@ package project;
  */
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
 public class Project 
 {
 
     public static void main(String[] args) 
     {
        double average = 0.0;
+       Random rand = new Random();
      
        
        Scanner in = new Scanner(System.in);
@@ -136,12 +138,7 @@ public class Project
         System.out.println(salaryArray.length);
         stanDev = (result/salaryArray.length);
         stanDev = Math.sqrt(stanDev);
-             
-  
-        return stanDev;
-            
-        
-        
+      
         return stanDev;
     }
     
