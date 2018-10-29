@@ -1,4 +1,4 @@
-package project;
+package Project;
 
 /**
  *
@@ -7,27 +7,37 @@ package project;
  *  Project Description: Write a program that simulates a statistics tool, 
  * by letting the user determine the minimum, the maximum, the range (maximum – minimum), 
  * the mode (value that is repeated more often), the mean
-* (average), and the standard deviation of a set of numbers. T
-* hese numbers, that will be stored in an array, represent salaries in the $30K – $60K range 
+* (average), and the standard deviation of a set of numbers. 
+* These numbers, that will be stored in an array, represent salaries in the $30K – $60K range 
 * and are to be generated randomly.
  */
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 public class Project 
 {
 
     public static void main(String[] args) 
     {
        double average = 0.0;
-       Random rand = new Random();
      
        
        Scanner in = new Scanner(System.in);
+       Random rand = new Random();
 //       double salary = in.nextDouble();
+       int [] salaryArray = new int [5];
+       
+        for (int i = 0; i < salaryArray.length; i++) 
+        {
+            salaryArray[i] = rand.nextInt(30000) + 30000;
+            System.out.print(salaryArray[i] + " ");
+        }
+        System.out.println("");
+        
         int UserInput = 0;       
         do 
         {
+            System.out.println(" ");
             System.out.println("1) Populate Array");
             System.out.println("2) Display Array");
             System.out.println("3) Minimum");
@@ -44,12 +54,24 @@ public class Project
             {
                 case 1:
                 {
+                    
                     //System.out.println("Populate Array");
+                      for (int i = 0; i < salaryArray.length; i++) 
+                      {
+                        salaryArray[i] = rand.nextInt(30000) + 30000;
+                        System.out.print(salaryArray[i] + " ");
+                      }
                     break;
                 }
                 case 2:
                 {
                     //System.out.println("Display Array");
+                    for (int i = 0; i < salaryArray.length; i++) 
+                    {
+                        System.out.print("$" + salaryArray[i] + " ");
+                        
+                    }
+                   
                     break;                   
                 }
                 case 3: 
@@ -75,47 +97,71 @@ public class Project
                 case 7 :
                 {
                     //System.out.println("Mean");
+                    double total = 0;
+                    for (double element: salaryArray) 
+                    {
+                        total += element;
+                        average = (total / salaryArray.length);
+                    }
+                    System.out.println("The mean is: " + average);
+                    
                     break;
                 }
                 case 8:
                 {
                     //System.out.println("Standard Deviation");
+                    System.out.println(standardDeviation(salaryArray));
                     break;
                 }
                 default:
                 {
-                    //System.out.println(" ");
+                    //System.out.println("");
                     break;
                 }                   
             }           
         } while (UserInput != 9);
-        //System.out.println("Goodbye!");
-        
-       double [] salaryArray = {22.0, 69.0, 10.0};
-       
-//        for (int i = 0; i < salaryArray.length; i++) 
-//        {
-//            
-//        }
-//       
+        System.out.println("Goodbye!");
         
         // Calculating Average (The Mean)
-        double total = 0;
-        for (double element: salaryArray) 
-        {
-           total += element;
-           average = (total / salaryArray.length);
-        }
-        System.out.println("The average is: " + average);
         
-        System.out.println(standardDeviation(salaryArray));
+        
+        
         
         
        
         
     }
-    // Standard Deviation Method
-    public static double standardDeviation(double[] salaryArray)
+    
+    //Popluate Array Method
+    public static double PopulateArray(int [] numbers)
+    {
+        Random rand = new Random();
+        int x = numbers[4];
+        
+        for (int i = 0; i < numbers.length; i++) 
+        {
+         
+           // x  =(double)(Math.random()31000.00 + 30000.00);
+            x = rand.nextInt(31000) + 30000;
+            
+           
+        }
+        return x;
+        
+    }
+    
+    //Display array method
+//    public static double DisplayArray(int[] numbers)
+//    {
+//        int x = numbers[0];
+//        
+//    }
+        
+        
+    
+    
+    // Standard DeviationMethod
+    public static double standardDeviation(int[] salaryArray)
     {
         double average = 0.0;
         double stanDev = 0.0;
@@ -127,20 +173,26 @@ public class Project
            total += element;
         }
         average = (total / salaryArray.length);
-        System.out.println("The average is: " + average);
-        System.out.println(salaryArray.length);
-        System.out.println(total);
+        //System.out.println("The average is: " + average);
+        //System.out.println(salaryArray.length);
+        //System.out.println(total);
         for(double element: salaryArray)
         {
             result += Math.pow((element - average), 2);
             
         } // end for
-        System.out.println(salaryArray.length);
+       // System.out.println(salaryArray.length);
         stanDev = (result/salaryArray.length);
         stanDev = Math.sqrt(stanDev);
-
-        return stanDev;
+             
+  
+        return (int)stanDev;
     }
+            
+        
+        
+        
+    
     
     //Max method
     public static double getMaxValue(double [] numbers)
@@ -160,7 +212,7 @@ public class Project
     // Min method
     public static double getMinValue(double [] numbers)
     {
-        double minValue = 61;
+        double minValue = 60001.00;
         for(int i=0;i<numbers.length;i++)
         {
             if(numbers[i] < minValue)
