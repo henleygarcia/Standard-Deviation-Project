@@ -32,7 +32,7 @@ public class Project
        
         for (int i = 0; i < salaryArray.length; i++) 
         {
-            salaryArray[i] = rand.nextInt(30000) + 30000;
+            salaryArray[i] = rand.nextInt(31000) + 30000;
             System.out.print(salaryArray[i] + " ");
         }
         System.out.println("");
@@ -97,6 +97,7 @@ public class Project
                 case 6: 
                 {
                     //System.out.println("Mode");
+                    System.out.println(getMode(salaryArray));
                     break;
                 }
                 case 7 :
@@ -204,7 +205,34 @@ public class Project
         
         return minValue;
     }
-        
-        
     
+    public static double getMode(double[] numbers)
+    {
+        double maxValue = 0;
+        double maxCount = 0;
+        int count = 0;
+    for (int i = 0; i < numbers.length; ++i) 
+    {
+        
+        for (int j = 0; j < numbers.length; ++j) 
+        {
+            if (numbers[j] == numbers[i]) 
+                ++count;
+        }
+        if (count > maxCount) 
+        {
+            maxCount = count;
+            maxValue = numbers[i];
+        }
+        else if(maxCount < count)
+        {
+            
+        }      
+    }
+    
+        
+
+    return maxValue;
+    }
+  
 }
