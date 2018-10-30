@@ -11,6 +11,7 @@ package Project;
 * These numbers, that will be stored in an array, represent salaries in the $30K – $60K range 
 * and are to be generated randomly.
  */
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -24,8 +25,10 @@ public class Project
        
        Scanner in = new Scanner(System.in);
        Random rand = new Random();
+        DecimalFormat dec = new DecimalFormat();
+         dec.setMaximumFractionDigits(2);
 //       double salary = in.nextDouble();
-       int [] salaryArray = new int [5];
+       double [] salaryArray = new double [5];
        
         for (int i = 0; i < salaryArray.length; i++) 
         {
@@ -77,11 +80,13 @@ public class Project
                 case 3: 
                 {
                     //System.out.println("Minimum");
+                    System.out.println(getMinValue(salaryArray));
                     break;
                 }
                 case 4: 
                 {
                     //System.out.println("Maximum");
+                    System.out.println(getMaxValue(salaryArray));
                     break;
                 }
                 case 5: 
@@ -109,8 +114,8 @@ public class Project
                 }
                 case 8:
                 {
-                    //System.out.println("Standard Deviation");
-                    System.out.println(standardDeviation(salaryArray));
+                    System.out.println("Standard Deviation");
+                    System.out.println(dec.format(standardDeviation(salaryArray)));
                     break;
                 }
                 default:
@@ -122,7 +127,7 @@ public class Project
         } while (UserInput != 9);
         System.out.println("Goodbye!");
         
-        // Calculating Average (The Mean)
+       
         
         
         
@@ -132,36 +137,10 @@ public class Project
         
     }
     
-    //Popluate Array Method
-    public static double PopulateArray(int [] numbers)
-    {
-        Random rand = new Random();
-        int x = numbers[4];
-        
-        for (int i = 0; i < numbers.length; i++) 
-        {
-         
-           // x  =(double)(Math.random()31000.00 + 30000.00);
-            x = rand.nextInt(31000) + 30000;
-            
-           
-        }
-        return x;
-        
-    }
     
-    //Display array method
-//    public static double DisplayArray(int[] numbers)
-//    {
-//        int x = numbers[0];
-//        
-//    }
-        
-        
-    
-    
+   
     // Standard DeviationMethod
-    public static double standardDeviation(int[] salaryArray)
+    public static double standardDeviation(double[] salaryArray)
     {
         double average = 0.0;
         double stanDev = 0.0;
@@ -186,7 +165,7 @@ public class Project
         stanDev = Math.sqrt(stanDev);
              
   
-        return (int)stanDev;
+        return stanDev;
     }
             
         
