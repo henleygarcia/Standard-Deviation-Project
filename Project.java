@@ -32,7 +32,7 @@ public class Project
        
         for (int i = 0; i < salaryArray.length; i++) 
         {
-            salaryArray[i] = rand.nextInt(31000) + 30000;
+            salaryArray[i] = rand.nextInt(10) + 1;
             System.out.print(salaryArray[i] + " ");
         }
         System.out.println("");
@@ -97,7 +97,14 @@ public class Project
                 case 6: 
                 {
                     //System.out.println("Mode");
-                    System.out.println(getMode(salaryArray));
+                    
+                    if (getMode(salaryArray) == 0) 
+                    {
+                        System.out.println("there is no mode");
+                        
+                    }
+                    else 
+                        System.out.println(getMode(salaryArray));
                     break;
                 }
                 case 7 :
@@ -206,33 +213,46 @@ public class Project
         return minValue;
     }
     
-    public static double getMode(double[] numbers)
+    public static double getMode(double[] num)
     {
-        double maxValue = 0;
-        double maxCount = 0;
-        int count = 0;
-    for (int i = 0; i < numbers.length; ++i) 
+       
+        Arrays.sort(num);
+    
+    double count2 = 0;
+    double count1 = 0;
+    double pupular1 =0;
+    double popular2 =0;
+
+
+    for (int i = 0; i < num.length; i++)
     {
-        
-        for (int j = 0; j < numbers.length; ++j) 
+            pupular1 = num[i];
+            count1 = 0;    
+
+        for (int j = i + 1; j < num.length; j++)
         {
-            if (numbers[j] == numbers[i]) 
-                ++count;
+            if (pupular1 == num[j]) 
+                count1++;
         }
-        if (count > maxCount) 
+
+        if (count1 > count2)
         {
-            maxCount = count;
-            maxValue = numbers[i];
+                popular2 = pupular1;
+                count2 = count1;
         }
-        else if(maxCount < count)
+
+        else if(count1 == count2)
         {
+            popular2 = Math.min(popular2, pupular1);
             
-        }      
+            
+        }
     }
     
+    return popular2;
         
 
-    return maxValue;
+    
     }
   
 }
