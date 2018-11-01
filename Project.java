@@ -30,12 +30,12 @@ public class Project
 //       double salary = in.nextDouble();
        double [] salaryArray = new double [5];
        
-        for (int i = 0; i < salaryArray.length; i++) 
-        {
-            salaryArray[i] = rand.nextInt(10) + 1;
-            System.out.print(salaryArray[i] + " ");
-        }
-        System.out.println("");
+//        for (int i = 0; i < salaryArray.length; i++) 
+//        {
+//            salaryArray[i] = rand.nextInt(30000) + 30000;
+//            System.out.print(salaryArray[i] + " ");
+//        }
+//        System.out.println("");
         
         int UserInput = 0;       
         do 
@@ -50,7 +50,7 @@ public class Project
             System.out.println("7) Mean");
             System.out.println("8) Standard Deviation");
             System.out.println("9) Exit");
-            System.out.print("PLease enter a number: ");
+            System.out.print("Please enter a number: ");
             UserInput = in.nextInt();
             
             switch(UserInput)
@@ -62,7 +62,7 @@ public class Project
                       for (int i = 0; i < salaryArray.length; i++) 
                       {
                         salaryArray[i] = rand.nextInt(30000) + 30000;
-                        System.out.print(salaryArray[i] + " ");
+                        //System.out.print(salaryArray[i] + " ");
                       }
                     break;
                 }
@@ -71,27 +71,26 @@ public class Project
                     //System.out.println("Display Array");
                     for (int i = 0; i < salaryArray.length; i++) 
                     {
-                        System.out.print("$" + salaryArray[i] + " ");
-                        
-                    }
-                   
+                        System.out.print("$" + salaryArray[i] + " ");                       
+                    }                   
                     break;                   
                 }
                 case 3: 
                 {
                     //System.out.println("Minimum");
-                    System.out.println(getMinValue(salaryArray));
+                    System.out.println("the minimum value is: "  + getMinValue(salaryArray));
                     break;
                 }
                 case 4: 
                 {
                     //System.out.println("Maximum");
-                    System.out.println(getMaxValue(salaryArray));
+                    System.out.println("the maximum value is: " + getMaxValue(salaryArray));
                     break;
                 }
                 case 5: 
                 {
                     //System.out.println("Range");
+                    System.out.println("the range is: " + (getMaxValue(salaryArray) - getMinValue(salaryArray)));
                     break;
                 }
                 case 6: 
@@ -134,18 +133,8 @@ public class Project
             }           
         } while (UserInput != 9);
         System.out.println("Goodbye!");
-        
-       
-        
-        
-        
-        
-        
-       
-        
-    }
     
-    
+    }  
    
     // Standard DeviationMethod
     public static double standardDeviation(double[] salaryArray)
@@ -170,16 +159,10 @@ public class Project
         } // end for
        // System.out.println(salaryArray.length);
         stanDev = (result/salaryArray.length);
-        stanDev = Math.sqrt(stanDev);
-             
+        stanDev = Math.sqrt(stanDev);            
   
         return stanDev;
-    }
-            
-        
-        
-        
-    
+    }   
     
     //Max method
     public static double getMaxValue(double [] numbers)
@@ -192,7 +175,7 @@ public class Project
                 maxValue = numbers[i];
             }
         }
-        System.out.println("the max value is: " + maxValue);
+        //System.out.println("the max value is: " + maxValue);
         return maxValue;
     }
     
@@ -207,52 +190,39 @@ public class Project
                 minValue = numbers[i];
             }
         }
-        System.out.println("the min value is: " + minValue);
-        String Output = "the min value is " + minValue;
+        //System.out.println("the min value is: " + minValue);
+        //String Output = "the min value is " + minValue;
         
         return minValue;
     }
     
     public static double getMode(double[] num)
-    {
-       
-        Arrays.sort(num);
-    
+    {      
+        Arrays.sort(num);   
     double count2 = 0;
     double count1 = 0;
     double pupular1 =0;
     double popular2 =0;
-
-
     for (int i = 0; i < num.length; i++)
     {
             pupular1 = num[i];
             count1 = 0;    
-
         for (int j = i + 1; j < num.length; j++)
         {
-            if (pupular1 == num[j]) 
-                count1++;
+            if (pupular1 == num[j]) count1++;
         }
-
         if (count1 > count2)
         {
                 popular2 = pupular1;
                 count2 = count1;
         }
-
         else if(count1 == count2)
         {
-            popular2 = Math.min(popular2, pupular1);
-            
-            
+            popular2 = Math.min(popular2, pupular1);          
         }
-    }
-    
+    }  
     return popular2;
-        
-
-    
+ 
     }
   
 }
