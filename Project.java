@@ -2,8 +2,8 @@ package project;
 
 /**
  *
- *  Team leader: Henley Garcia Panther ID: 4156157 COP2210
- *  David Huerta Panther ID: 5057953 COP2210
+ *  Team leader: Henley Garcia PID: 4156157 COP2210
+ *  David Huerta PID: 5057953 COP2210
  * 
  *  Project Description: Write a program that simulates a statistics tool, 
  * by letting the user determine the minimum, the maximum, the range (maximum – minimum), 
