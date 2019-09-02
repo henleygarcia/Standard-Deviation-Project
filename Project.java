@@ -22,12 +22,10 @@ public class Project
     public static void main(String[] args) 
     {
        double average = 0.0;
-     
-       
        Scanner in = new Scanner(System.in);
        Random rand = new Random();
-        DecimalFormat dec = new DecimalFormat();
-        dec.setMaximumFractionDigits(2);
+       DecimalFormat dec = new DecimalFormat();
+       dec.setMaximumFractionDigits(2);
        double [] salaryArray = new double [5];
 
         int UserInput = 0;       
@@ -216,5 +214,4 @@ public class Project
     return popular2;
  
     } // end method getMode
-  
 }
